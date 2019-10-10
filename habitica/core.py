@@ -299,7 +299,7 @@ def cli():
         # if in a party, grab party info
         if group:
             party_id = group[0]['id']
-            party_title = group[0]['name']
+            party = group[0]['name']
 
             # if on a quest with the party, grab quest info
             quest_data = getattr(hbt.groups, party_id)()['quest']
@@ -363,7 +363,7 @@ def cli():
         mount = items.get('currentMount', '')
         if not mount:
             mount = DEFAULT_MOUNT
-        summary_items = ('health', 'xp', 'mana', 'quest', 'pet', 'mount')
+        summary_items = ('health', 'xp', 'mana', 'quest', 'pet', 'mount', 'party')
         len_ljust = max(map(len, summary_items)) + 1
         print('-' * len(title))
         print(title)
